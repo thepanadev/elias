@@ -1,0 +1,7 @@
+interface:
+  display_name: "Agent Management Teacher"
+  short_description: "Learn rigorous coding-agent orchestration"
+  default_prompt: "Use $agent-management-teacher to continue my practical course on managing coding agents."
+
+policy:
+  allow_implicit_invocation: false
