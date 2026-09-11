@@ -2,26 +2,22 @@
 
 ## Current position
 
-- Module: 1 — Throughput and bottlenecks
-- Status: in progress
-- Last session: 2026-09-10
+- Module: 2 — Verification first
+- Status: not started
+- Last session: 2026-09-11
+- Completed modules: 1 of 7
+- Overall progress: 14%
 
 ## Open exercise
 
-Choose a recent Java/Spring change and identify:
-
-1. the final unit of value;
-2. the slowest step;
-3. where work accumulated;
-4. what required human intervention;
-5. what evidence could make that intervention delegable.
+Define the `environment-ready` contract: the observable evidence an agent must produce before claiming that an OpenShift environment is ready for functional verification.
 
 ## Evidence
 
-- Course structure agreed.
-- The three-minute-egg analogy was introduced.
-- No real workflow diagnosis has been evaluated yet.
+- Module 1 completed with a real workflow diagnosis.
+- The critical path begins before functional testing: JFrog artifact checks and conditional Jenkins rebuilds, Helm deployment (~45 minutes), base seed data (~1 hour), then scenario-specific manual data.
+- The user distinguished fixed latency, variable rework and knowledge held by the human operator.
 
 ## Next action
 
-Evaluate the user's concrete example and decide whether Module 1 is `superado`, `parcial` or `repetir`.
+Begin Module 2 by defining evidence for artifact availability, successful deployment, base data readiness and scenario data readiness.
