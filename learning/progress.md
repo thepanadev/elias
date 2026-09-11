@@ -2,15 +2,15 @@
 
 ## Current position
 
-- Module: 3 — Verification skills
+- Module: 4 — Work decomposition and parallelism
 - Status: in progress
 - Last session: 2026-09-11
-- Completed modules: 2 of 7
-- Overall progress: 29%
+- Completed modules: 3 of 7
+- Overall progress: 43%
 
 ## Open exercise
 
-Design the first `verify-environment-ready` skill: define its input, checks, evidence report and stopping conditions without embedding credentials or undocumented exceptions.
+Decompose environment preparation into dependency-aware work units and decide which checks or builds can run in parallel without sharing unsafe write scopes.
 
 ## Evidence
 
@@ -19,7 +19,8 @@ Design the first `verify-environment-ready` skill: define its input, checks, evi
 - The user distinguished fixed latency, variable rework and knowledge held by the human operator.
 - Module 2 completed through a worked reference contract mapping artifact availability, deployment health, seed postconditions, scenario prerequisites and deployed-change identity to observable checks.
 - Deployment identity is modeled as commit SHA → Jenkins build → artifact checksum → image digest → Helm release → running pod image ID. This is a target design to investigate, not a claim about the current company setup.
+- Module 3 completed through a worked two-skill design: `prepare-environment` owns bounded mutations and checkpoints; `verify-environment-ready` remains observational and independently emits PASS, FAIL or BLOCKED with evidence.
 
 ## Next action
 
-Specify the boundary and output schema of `verify-environment-ready`, then test whether another agent could execute it without relying on the user's undocumented knowledge.
+Build the dependency graph for artifact preflight, targeted Jenkins rebuilds, Helm deployment, base seed, scenario seed and independent verification; identify real versus fake parallelism.
