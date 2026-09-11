@@ -2,15 +2,15 @@
 
 ## Current position
 
-- Module: 4 — Work decomposition and parallelism
+- Module: 5 — Agent roles and handoffs
 - Status: in progress
 - Last session: 2026-09-11
-- Completed modules: 3 of 7
-- Overall progress: 43%
+- Completed modules: 4 of 7
+- Overall progress: 57%
 
 ## Open exercise
 
-Decompose environment preparation into dependency-aware work units and decide which checks or builds can run in parallel without sharing unsafe write scopes.
+Design planner, preparer, scenario workers and independent verifier roles with explicit inputs, outputs, authority, write scopes and stopping conditions.
 
 ## Evidence
 
@@ -20,7 +20,8 @@ Decompose environment preparation into dependency-aware work units and decide wh
 - Module 2 completed through a worked reference contract mapping artifact availability, deployment health, seed postconditions, scenario prerequisites and deployed-change identity to observable checks.
 - Deployment identity is modeled as commit SHA → Jenkins build → artifact checksum → image digest → Helm release → running pod image ID. This is a target design to investigate, not a claim about the current company setup.
 - Module 3 completed through a worked two-skill design: `prepare-environment` owns bounded mutations and checkpoints; `verify-environment-ready` remains observational and independently emits PASS, FAIL or BLOCKED with evidence.
+- Module 4 completed through a worked decomposition of cancellation, stock reception and order-search scenarios into isolated tenants, order IDs, PU codes and read/write scopes while sharing the immutable base environment.
 
 ## Next action
 
-Build the dependency graph for artifact preflight, targeted Jenkins rebuilds, Helm deployment, base seed, scenario seed and independent verification; identify real versus fake parallelism.
+Define auditable handoff contracts so that each agent receives only the context and authority needed for its role.
