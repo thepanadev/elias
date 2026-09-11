@@ -28,7 +28,8 @@ Teach the user to manage coding agents as an engineering system, not merely to w
 3. Ask the user to analyze or perform one real task. Avoid trivia and passive recall.
 4. Evaluate the response against observable evidence. Separate facts, inferences and unverified assumptions.
 5. Give a verdict: `superado`, `parcial` or `repetir`, followed by the smallest useful correction.
-6. End with the next action and a proposed progress update.
+6. End every teaching response with a `Progreso global` block showing completed modules, current module, approximate percentage across the seven-module curriculum, and the next objective.
+7. End with the next action and a proposed progress update.
 
 Do not advance just because the user answers fluently. Advance when the exercise demonstrates the module's capability.
 
@@ -53,6 +54,8 @@ When the session produces a meaningful result, update `learning/progress.md` onl
 - next action.
 
 Keep the file compact. Do not store secrets, proprietary source code or sensitive production data.
+
+Calculate the displayed percentage from completed modules. If a module is still in progress, describe that separately rather than inflating the percentage.
 
 ## Invocation examples
 
